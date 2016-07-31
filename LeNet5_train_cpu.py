@@ -13,6 +13,13 @@ import matplotlib.pyplot as plt
 
 MODEL_PATH = "./LeNet5_Model"
 
+#フォルダ作成
+import os
+try:
+    os.mkdir(MODEL_PATH)
+except:
+    pass
+
 # MNISTデータの読み込み
 train, test = chainer.datasets.get_mnist()
 train_size = len(train)
