@@ -14,13 +14,9 @@ class LeNet5(Chain):
         
     def __call__(self, x):
         h1 = F.sigmoid(F.average_pooling_2d(self.conv1(x), 2))
-        #print h1.debug_print()
         h2 = F.sigmoid(F.average_pooling_2d(self.conv2(h1),2))
-        #print h2.debug_print()
         h3 = self.conv3(h2)
-        #print h3.debug_print()
         h4 = F.tanh(self.l1(h3))
-        #print h4.debug_print()
         p = self.l2(h4)
     
         return p
